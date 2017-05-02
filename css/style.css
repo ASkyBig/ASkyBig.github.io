@@ -411,6 +411,7 @@ body {
   width: 100%;
   height: 100%;
   background: #21282e;
+  background: url("images/banner.jpg") center #000;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -803,6 +804,7 @@ a.article-title:hover {
   content: "#";
 }
 .article-comment-link {
+  display: none;
   float: right;
 }
 .article-comment-link:before {
@@ -811,6 +813,7 @@ a.article-title:hover {
   padding-right: 8px;
 }
 .article-share-link {
+  display: none;
   cursor: pointer;
   float: right;
   margin-left: 20px;
