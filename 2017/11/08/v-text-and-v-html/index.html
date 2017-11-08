@@ -4,14 +4,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: vue | Yang Jian&#39;s blog</title>
+  <title>v-text_and_v-html | Yang Jian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yang Jian&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/vue/index.html">
+  <meta name="description" content="###v-text和v-html的区别">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="v-text_and_v-html">
+<meta property="og:url" content="http://yoursite.com/2017/11/08/v-text-and-v-html/index.html">
 <meta property="og:site_name" content="Yang Jian&#39;s blog">
+<meta property="og:description" content="###v-text和v-html的区别">
+<meta property="og:updated_time" content="2017-11-08T13:16:20.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yang Jian&#39;s blog">
+<meta name="twitter:title" content="v-text_and_v-html">
+<meta name="twitter:description" content="###v-text和v-html的区别">
   
   
     <link rel="icon" href="/favicon.png">
@@ -63,78 +68,86 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/11/08/v-text、v-bind/" class="archive-article-date">
-  <time datetime="2017-11-08T14:03:12.000Z" itemprop="datePublished">11-08</time>
+      <section id="main"><article id="post-v-text-and-v-html" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/08/v-text-and-v-html/" class="article-date">
+  <time datetime="2017-11-08T12:58:26.000Z" itemprop="datePublished">2017-11-08</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/vue/">vue</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/08/v-text、v-bind/">v-text v-html</a>
+    <h1 class="article-title" itemprop="name">
+      v-text_and_v-html
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/11/08/v-text-and-v-html/" class="archive-article-date">
-  <time datetime="2017-11-08T12:58:26.000Z" itemprop="datePublished">11-08</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/08/v-text-and-v-html/">v-text_and_v-html</a>
-    </h1>
-  
+        <p>###v-text和v-html的区别<br><a id="more"></a></p>
+<ul>
+<li>v-text和<code>{{}}</code>一样</li>
+<li>v-text不解释标签，v-html解释标签</li>
+<li>解释html标签可能导致xss攻击，不要使用用户提供的内容插值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;title&gt;&lt;/title&gt;</div><div class="line">	&lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div id=&quot;app&quot;&gt;</div><div class="line">		&lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</div><div class="line">		&lt;p v-text=&quot;msg&quot;&gt;&lt;/p&gt;</div><div class="line">		&lt;p v-html=&quot;msg&quot;&gt;&lt;/p&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">		var app = new Vue(&#123;</div><div class="line">	  	el: &apos;#app&apos;,	//element</div><div class="line">	  	data: &#123;</div><div class="line">	  	 	 msg: &apos;&lt;strong&gt;Hello&lt;/strong&gt; Vue!&apos;,</div><div class="line">	  		&#125;</div><div class="line">		&#125;)</div><div class="line">	&lt;/script&gt;</div><div class="line">	</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>效果：</p>
+<p>{{}}：<code>&lt;strong&gt;</code>Hello<code>&lt;/strong&gt;</code> Vue!<br>v-text：<code>&lt;strong&gt;</code>Hello<code>&lt;/strong&gt;</code> Vue!<br>v-html：<strong>Hello</strong> Vue!</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/21/hello vue/" class="archive-article-date">
-  <time datetime="2017-05-21T05:53:43.000Z" itemprop="datePublished">05-21</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/21/hello vue/">vue版hello world</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2017/11/08/v-text-and-v-html/" data-id="cj9r2j0r200037cvpio7nv94m" class="article-share-link" data-share="baidu" data-title="v-text_and_v-html">分享到</a>
+      
 
-    </header>
+      
+        <a href="http://yoursite.com/2017/11/08/v-text-and-v-html/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/08/v-text、v-bind/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          v-text v-html
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/06/25/node版hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">node版hello world</div>
+    </a>
   
+</nav>
 
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2017/11/08/v-text-and-v-html/" data-title="v-text_and_v-html" data-url="http://yoursite.com/2017/11/08/v-text-and-v-html/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">
