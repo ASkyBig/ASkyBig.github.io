@@ -6,17 +6,17 @@
   
   <title>（译）网站加速最佳实践——雅虎35条 | Yang Jian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="翻译了一下雅虎35条，这是原文地址。  （雅虎的）卓越的性能团队已经确定了一些提升网页速度的最佳实践。该清单包括35条，分为7大类。 ###1、内容 ####最小化http请求终端用户响应时间的80%用在前端。这个时间中的大部分都是在下载页面中的所有组件：图片、样式表、脚本、Flash等。减少组件的数量顺带减少了渲染页面所需的http请求的数量。这是页面加速的关键。 减少页面中组件数量的一种方法是">
+  <meta name="description" content="花了一个星期翻译了一下雅虎35条，这是原文地址。水平有限，欢迎邮箱(yangj0412@foxmail.com)指正。">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="（译）网站加速最佳实践——雅虎35条">
 <meta property="og:url" content="http://yoursite.com/2017/11/22/（译）网站加速最佳实践——雅虎35条/index.html">
 <meta property="og:site_name" content="Yang Jian&#39;s blog">
-<meta property="og:description" content="翻译了一下雅虎35条，这是原文地址。  （雅虎的）卓越的性能团队已经确定了一些提升网页速度的最佳实践。该清单包括35条，分为7大类。 ###1、内容 ####最小化http请求终端用户响应时间的80%用在前端。这个时间中的大部分都是在下载页面中的所有组件：图片、样式表、脚本、Flash等。减少组件的数量顺带减少了渲染页面所需的http请求的数量。这是页面加速的关键。 减少页面中组件数量的一种方法是">
-<meta property="og:updated_time" content="2017-11-22T14:39:31.665Z">
+<meta property="og:description" content="花了一个星期翻译了一下雅虎35条，这是原文地址。水平有限，欢迎邮箱(yangj0412@foxmail.com)指正。">
+<meta property="og:updated_time" content="2017-11-22T14:48:14.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="（译）网站加速最佳实践——雅虎35条">
-<meta name="twitter:description" content="翻译了一下雅虎35条，这是原文地址。  （雅虎的）卓越的性能团队已经确定了一些提升网页速度的最佳实践。该清单包括35条，分为7大类。 ###1、内容 ####最小化http请求终端用户响应时间的80%用在前端。这个时间中的大部分都是在下载页面中的所有组件：图片、样式表、脚本、Flash等。减少组件的数量顺带减少了渲染页面所需的http请求的数量。这是页面加速的关键。 减少页面中组件数量的一种方法是">
+<meta name="twitter:description" content="花了一个星期翻译了一下雅虎35条，这是原文地址。水平有限，欢迎邮箱(yangj0412@foxmail.com)指正。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -94,11 +94,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>翻译了一下雅虎35条，这是<a href="https://developer.yahoo.com/performance/rules.html" target="_blank" rel="external">原文地址</a>。</p>
-<hr>
-<p>（雅虎的）卓越的性能团队已经确定了一些提升网页速度的最佳实践。该清单包括35条，分为7大类。</p>
-<p>###1、内容</p>
-<p>####最小化http请求<br>终端用户响应时间的80%用在前端。这个时间中的大部分都是在下载页面中的所有组件：图片、样式表、脚本、Flash等。减少组件的数量顺带减少了渲染页面所需的http请求的数量。<strong>这是页面加速的关键</strong>。</p>
+        <p>花了一个星期翻译了一下雅虎35条，这是<a href="https://developer.yahoo.com/performance/rules.html" target="_blank" rel="external">原文地址</a>。水平有限，欢迎邮箱(yangj0412@foxmail.com)指正。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>（雅虎的）卓越的性能团队已经确定了一些提升网页速度的最佳实践。该清单包括35条，分为7大类。</p>
+<h3 id="1、内容"><a href="#1、内容" class="headerlink" title="1、内容"></a>1、内容</h3><p>####最小化http请求<br>终端用户响应时间的80%用在前端。这个时间中的大部分都是在下载页面中的所有组件：图片、样式表、脚本、Flash等。减少组件的数量顺带减少了渲染页面所需的http请求的数量。<strong>这是页面加速的关键</strong>。</p>
 <p>减少页面中组件数量的一种方法是简化页面的设计。但是，有没有一种方法，在构建包含丰富内容的页面同时获得快速的响应时间？以下是一些减少http请求的同时又支持丰富的页面设计的技术。</p>
 <p><strong>组合文件</strong>是一种减少http请求数量的方法。将所有的脚本文件组合成一个单独的脚本文件；同理，将所有的CSS文件组合成一个单独的样式表。当脚本和样式表因页面而异时，组合文件会更加具有挑战性。但是，在你的网站发布过程中克服这一部分，将会提升响应时间。</p>
 <p><strong>CSS精灵</strong>（很多人管它叫<strong>雪碧图</strong>）是减少图片请求数量的首选方法。将所有的背景图片组合成单独的一张，利用CSS的<code>background-image</code>和<code>background-position</code>属性来展现需要的图片部分。</p>
@@ -106,30 +104,30 @@
 <p><strong>内联图片</strong>使用<code>data: URL</code>的方法将图片数据嵌入真实的页面中。这将导致你的HTML文档大小的增加。将内联图片合并到缓存的样式表中是减少http请求并避免增加页面大小的一种方法。所有的主流浏览器都不支持内联图片。</p>
 <p>减少你的网页中http请求的数量是网站加速的开始。这是提高首次访问的用户性能的最重要的指南。正如Tenni Theurer的博客文章“<a href="https://yuiblog.com/blog/2007/01/04/performance-research-part-2/" target="_blank" rel="external">Browser Cache Usage - Exposed!</a>”所述，每日访问你的网站的用户中的40%-60%是空缓存。对于这些首次访问的用户，加快网站展示速度是更好的用户体验的关键。</p>
 <hr>
-<p>####减少DNS查询<br>域名系统将主机名映射到IP地址，就像电话簿将人名映射到他们的电话号码。当你在浏览器中键入<code>www.yahoo.com</code>时，浏览器关联的DNS解析器返回服务器的IP地址。DNS有成本。DNS通常需要花费20-120毫秒查询给定的主机名的IP地址。在DNS查询完成之前，浏览器不能从该主机名下载任何东西。</p>
+<h4 id="减少DNS查询"><a href="#减少DNS查询" class="headerlink" title="减少DNS查询"></a>减少DNS查询</h4><p>域名系统将主机名映射到IP地址，就像电话簿将人名映射到他们的电话号码。当你在浏览器中键入<code>www.yahoo.com</code>时，浏览器关联的DNS解析器返回服务器的IP地址。DNS有成本。DNS通常需要花费20-120毫秒查询给定的主机名的IP地址。在DNS查询完成之前，浏览器不能从该主机名下载任何东西。</p>
 <p>缓存DNS查询可以有更好的性能。这种缓存可以存在于由用户的ISP或局域网维护的特殊的缓存服务器中。但是也缓存于个人用户的电脑。DNS信息存在于操作系统的DNS缓存中（Microsoft Windows上的“DNS客户端服务”）。大多数浏览器拥有自己的缓存，与操作系统的缓存分离。只要浏览器在自己的缓存中保留了DNS记录，就不会对操作系统发出请求记录。</p>
 <p>按照<code>DnsCacheTimeout</code>注册表的设置，IE浏览器默认缓存DNS查询30分钟。Firefox浏览器缓存DNS查询1分钟，由<code>network.dnsCacheExpiration</code>配置环境控制。（Fasterfox将其更改为1小时）</p>
 <p>当客户端的DNS缓存为空（包括浏览器和操作系统），DNS查询的数量等价于页面中唯一的主机名的数量。这包括了页面中URL、图片、脚本文件、样式表、Flash对象等使用的主机名。减少唯一主机名的数量会减少DNS查询的数量。</p>
 <p>减少唯一主机名的数量可能会减少页面中并行下载的数量。避免DNS查询减少了响应时间，但减少并行下载可能增加响应时间。我的指导原则是将这些组件分成至少两个但不超过四个的主机名。这在减少DNS查询和允许高度并行下载取得了一个较好的折中。</p>
 <hr>
-<p>####避免重定向<br>重定向是使用301和302状态码完成的。这是一个301响应下的http头的例子：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">http/1.1 301 Moved Permanently</div><div class="line">Location: http://example.com/newurl</div><div class="line">   Content-Type: text/html</div></pre></td></tr></table></figure></p>
+<h4 id="避免重定向"><a href="#避免重定向" class="headerlink" title="避免重定向"></a>避免重定向</h4><p>重定向是使用301和302状态码完成的。这是一个301响应下的http头的例子：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">http/1.1 301 Moved Permanently</div><div class="line">Location: http://example.com/newurl</div><div class="line">   Content-Type: text/html</div></pre></td></tr></table></figure></p>
 <p> 浏览器自动将用户带到<code>Location</code>字段指定的URL。重定向需要的所有信息都在标头中。响应体通常是空的。除了它们的名字，无论是301还是302响应在实践中都不会被缓存。除了有额外的标头，例如<code>Expires</code>或者<code>Cache-Control</code>指明它应该被缓存。元刷新标记和JavaScript是将用户引导到不同URL的其它方法，但是，如果你一定要执行重定向，首选方法是使用标准的http3xx状态码，主要是确保后退按钮正常工作。</p>
 <p>你要记住的主要事情是，重定向会减慢用户体验。在用户和HTML文档之间插入一个重定向会延迟页面中的所有东西，因为在HTML文档到来之前，页面中没有东西可以被渲染，也没有任何组件可以开始下载。</p>
 <p>一个最浪费的重定向经常发生，并且web开发者通常没有意识到它。它发生在URL本来应该有的结尾斜杠丢失的时候。例如，访问<a href="http://astrology.yahoo.com/astrology" target="_blank" rel="external">http://astrology.yahoo.com/astrology</a> 得到一个包含重定向到<a href="http://astrology.yahoo.com/astrology/的301响应（注意添加的结尾斜杠）。如果你使用Apache处理程序，可以通过使用`Alias`或者`mod_rewrite`或者`DirectorSlash`指令修复。" target="_blank" rel="external">http://astrology.yahoo.com/astrology/的301响应（注意添加的结尾斜杠）。如果你使用Apache处理程序，可以通过使用`Alias`或者`mod_rewrite`或者`DirectorSlash`指令修复。</a></p>
 <p>将旧网站连接到新网址是重定向的另一个常见用途。其他用途包括连接网站的不同部分，根据某一条件（浏览器的类型、用户账户的类型等）指引用户。使用重定向连接两个网站很简单，只需要很少的额外代码。尽管在这些场合使用重定向帮助开发者降低了复杂度，但降低了用户体验。如果两个路径托管在同一服务器上，这种重定向的替代方案包括使用<code>Alias</code>和<code>mod_rewrite</code>。如果域名改变是使用重定向的原因，一个供选择的方案是创建一个CNAME（一个创建从一个域名指向另一个域名的别名的DNS记录）与<code>Alias</code>或者<code>mod_rewrite</code>结合。</p>
 <hr>
-<p>####让Ajax可缓存<br>引用AJax的一个好处是它为用户提供了及时反馈，因为它从后台web服务器异步请求数据。然而，使用Ajax不能保证用户不会无所事事地等待异步返回JavaScript和XML响应。在很多应用中，用户是否等待取决于Ajax的使用方式。例如，在一个基于web的电子邮件客户端中，用户将等待Ajax请求的结果来查找符合其搜索条件的所有电子邮件消息。请记住，异步并不意味着及时，这一点很重要。</p>
+<h4 id="让Ajax可缓存"><a href="#让Ajax可缓存" class="headerlink" title="让Ajax可缓存"></a>让Ajax可缓存</h4><p>引用AJax的一个好处是它为用户提供了及时反馈，因为它从后台web服务器异步请求数据。然而，使用Ajax不能保证用户不会无所事事地等待异步返回JavaScript和XML响应。在很多应用中，用户是否等待取决于Ajax的使用方式。例如，在一个基于web的电子邮件客户端中，用户将等待Ajax请求的结果来查找符合其搜索条件的所有电子邮件消息。请记住，异步并不意味着及时，这一点很重要。</p>
 <p>为了提高性能，优化这些Ajax响应十分重要。提高Ajax性能的最重要的手段是让这些响应可缓存，正如<a href="https://developer.yahoo.com/performance/rules.html#expires" target="_blank" rel="external">Add an Expires or a Cache-Control Header</a>中讨论的。其它一些规则也适用于Ajax：</p>
 <p><a href="https://developer.yahoo.com/performance/rules.html#gzip" target="_blank" rel="external">Gzip Components</a><br><a href="https://developer.yahoo.com/performance/rules.html#dns_lookups" target="_blank" rel="external">Reduce DNS Lookups</a><br><a href="https://developer.yahoo.com/performance/rules.html#minify" target="_blank" rel="external">Minify JavaScript</a><br><a href="https://developer.yahoo.com/performance/rules.html#redirects" target="_blank" rel="external">Avoid Redirects</a><br><a href="https://developer.yahoo.com/performance/rules.html#etags" target="_blank" rel="external">Configure ETags</a></p>
 <p>让我们看一个例子，web2.0电子邮件客户端可能使用Ajax来自动下载用户的地址簿。如果Ajax响应使用将来<code>Expires</code>或者<code>Cache-Control</code>标头变得可缓存，用户在上一次使用电子邮件Web应用程序后没有修改过她的地址簿，可以从缓存中读出以前的地址簿响应。必须通知浏览器何时使用先前缓存的地址簿响应而不是请求新的。这可以通过给地址簿Ajax URL添加一个时间戳指明用户最后修改地址簿的时间来完成。例如，<code>&amp;t=1190241612</code>。如果地址簿自从上一次下载后没有被修改，时间戳将会使相同的，地址簿将会从浏览器缓存中读取，避免了额外的http往返。如果用户修改了她的地址簿，时间戳会确保新的URL与已缓存的响应不匹配，浏览器将请求更新的地址簿记录。</p>
 <p>即使你的Ajax响应是动态创建的，并且适用于单个用户，它们仍然会被缓存。这样做将使你的Web 2.0应用程序更快。</p>
 <hr>
-<p>####延迟加载组件<br>你可以仔细看看你的页面然后扪心自问：“最初渲染页面，真正必须的是什么？”其余的内容和组件可以等待。</p>
+<h4 id="延迟加载组件"><a href="#延迟加载组件" class="headerlink" title="延迟加载组件"></a>延迟加载组件</h4><p>你可以仔细看看你的页面然后扪心自问：“最初渲染页面，真正必须的是什么？”其余的内容和组件可以等待。</p>
 <p>JavaScript是在onload事件之前和之后进行分割的理想选择。例如，你有JavaScript代码和可拖放和动画的函数库，这些可以等待，因为在页面拖放元素在初始化渲染之后。寻找选择延迟加载的其它地方包括隐藏内容（在用户行为之后出现的内容）以及不明显位置的图片（below the fold：不明显位置，需要滚动才能查看的页面位置）。</p>
 <p>在你的努力过程中，工具可以协助你：<a href="https://developer.yahoo.com/yui/imageloader/" target="_blank" rel="external">YUI Image Loader</a> 允许你延迟加载不明显位置的图片，<a href="https://developer.yahoo.com/yui/get/" target="_blank" rel="external">YUI Get utility</a>是 一种轻松包含JS和CSS文件的简单方法。例如，<strong>在自然环境下</strong>（in the wild不知道如何翻译）查看打开了Firebug的网络面板的<a href="https://www.yahoo.com/" target="_blank" rel="external">Yahoo!</a>主页。</p>
 <p>当性能目标和其它web开发最佳实践一致是好的。在这种情况下，渐进增强的观点告诉我们JavaScript（当被支持时）可以提高用户体验。但是你要确保页面在没有JavaScript的情况下也能正常工作。因此，在确保页面正常工作的情况下，你可以利用一些延迟加载的脚本来增强页面，这可以给你提供更多的附加功能，例如拖放和动画。</p>
 <hr>
-<p>####预加载组件<br>预加载可能看上去和延迟加载是对立的，实际上它有一个不同的目标。通过预加载组件，你可以利用浏览器处于空闲的时间请求将来需要的组件（图片、样式和脚本）。这样，当用户访问下一页时，你的大部分组件已经位于缓存中，对用户来说，页面的加载速度将会快很多。</p>
+<h4 id="预加载组件"><a href="#预加载组件" class="headerlink" title="预加载组件"></a>预加载组件</h4><p>预加载可能看上去和延迟加载是对立的，实际上它有一个不同的目标。通过预加载组件，你可以利用浏览器处于空闲的时间请求将来需要的组件（图片、样式和脚本）。这样，当用户访问下一页时，你的大部分组件已经位于缓存中，对用户来说，页面的加载速度将会快很多。</p>
 <p>实际上有几种类型的预加载：</p>
 <ul>
 <li>无条件的预加载 - 一旦onload开始，你可以获取一些额外的组件。google一下如何加载雪碧图（CSS-Sprite）的例子。此雪碧图在google.com的主页上不是必须的，但是在连续的搜索结果页面它是需要的。</li>
@@ -137,14 +135,16 @@
 <li>预期的预加载 - 在开始重新设计之前预加载。它经常发生在重新设计之后，你会听到：“新网站很酷，但是比以前慢”。部分问题可能是用户通过完整的缓存访问你的旧网站，但是访问新网址总是伴随着空缓存的体验。在你重新设计之前，你可以通过预加载一些组件以减少这种副作用。你的旧网站可以利用浏览器空闲的时间来请求新网站将要使用的图片和脚本。</li>
 </ul>
 <hr>
-<p>####减少DOM元素的数量<br> 复杂的页面意味着下载更多的字节和更慢的JavaScript的DOM访问。如果你在页面上循环500或5000DOM元素时，当你想要添加事件处理程序，则会有所不同。</p>
+<h4 id="减少DOM元素的数量"><a href="#减少DOM元素的数量" class="headerlink" title="减少DOM元素的数量"></a>减少DOM元素的数量</h4><p> 复杂的页面意味着下载更多的字节和更慢的JavaScript的DOM访问。如果你在页面上循环500或5000DOM元素时，当你想要添加事件处理程序，则会有所不同。</p>
 <p>大量的DOM元素可能是一个征兆：有些东西应该用页面标记来改进，而不必删除内容。你是否使用了嵌套表格来布局？你是否抛出更多的<code>&lt;div</code>只为修复布局问题？也许有一个更好、更加语义化的正确方法来做你的标记。</p>
 <p><a href="https://developer.yahoo.com/yui/" target="_blank" rel="external">YUI CSS utilities</a>对布局有很大的帮助：grids.css可以帮助你整体布局，font.css和reset.css可以帮助你去掉浏览器的默认格式。这是一个重新开始并考虑标记的机会。例如，<code>&lt;div&gt;</code>只有在语义上有意义时才使用，而不是因为它会渲染新的一行。</p>
 <p>DOM元素的数量很容易测试，只需要在Firebug的控制台键入以下内容：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.getElementsByTagName(&apos;*&apos;).length</div></pre></td></tr></table></figure></p>
-<h2 id="多少DOM元素才嫌多？检查其他拥有良好标记的类似页面。例如，Yahoo-Home-Page的确是一个忙碌的页面，但是它仍然少于700元素（HTML标签）。"><a href="#多少DOM元素才嫌多？检查其他拥有良好标记的类似页面。例如，Yahoo-Home-Page的确是一个忙碌的页面，但是它仍然少于700元素（HTML标签）。" class="headerlink" title=" 多少DOM元素才嫌多？检查其他拥有良好标记的类似页面。例如，Yahoo! Home Page的确是一个忙碌的页面，但是它仍然少于700元素（HTML标签）。"></a> 多少DOM元素才嫌多？检查其他拥有良好标记的类似页面。例如，<a href="https://www.yahoo.com/" target="_blank" rel="external">Yahoo! Home Page</a>的确是一个忙碌的页面，但是它仍然少于700元素（HTML标签）。</h2><p>####拆分跨域的组件<br> 拆分组件允许你最大程度地并行下载。请确保你使用的域名不超过2-4个，因为DNS查询代价。例如，你可以将HTML和动态内容托管在<code>www.example.org</code>，并在<code>static1.example.org</code>和<code>static2.example.org</code>之间拆分静态组件。</p>
+<p> 多少DOM元素才嫌多？检查其他拥有良好标记的类似页面。例如，<a href="https://www.yahoo.com/" target="_blank" rel="external">Yahoo! Home Page</a>的确是一个忙碌的页面，但是它仍然少于700元素（HTML标签）。</p>
+<hr>
+<h4 id="拆分跨域的组件"><a href="#拆分跨域的组件" class="headerlink" title="拆分跨域的组件"></a>拆分跨域的组件</h4><p> 拆分组件允许你最大程度地并行下载。请确保你使用的域名不超过2-4个，因为DNS查询代价。例如，你可以将HTML和动态内容托管在<code>www.example.org</code>，并在<code>static1.example.org</code>和<code>static2.example.org</code>之间拆分静态组件。</p>
 <p>若需了解更多信息，请查看Tenni Theurer和Patty Chi的文章<a href="https://yuiblog.com/blog/2007/04/11/performance-research-part-4/" target="_blank" rel="external">Maximizing Parallel Downloads in the Carpool Lane</a>。</p>
 <hr>
-<p>####最小化iframe的数量<br>iframe允许将HTML文档嵌入到父文档里。理解Iframe如何工作以便有效使用非常重要。</p>
+<h4 id="最小化iframe的数量"><a href="#最小化iframe的数量" class="headerlink" title="最小化iframe的数量"></a>最小化iframe的数量</h4><p>iframe允许将HTML文档嵌入到父文档里。理解Iframe如何工作以便有效使用非常重要。</p>
 <p><code>&lt;iframe&gt;</code>优点：</p>
 <ul>
 <li>有利于缓慢的第三方内容，例如标记和广告</li>
@@ -155,15 +155,14 @@
 <li>非语义</li>
 </ul>
 <hr>
-<p>####没有404<br>http请求代价高昂，提出一个http请求得到一个无用的响应（即404 Not Found）是没有必要的，并且会减慢用户体验，没有任何好处。</p>
+<h4 id="没有404"><a href="#没有404" class="headerlink" title="没有404"></a>没有404</h4><p>http请求代价高昂，提出一个http请求得到一个无用的响应（即404 Not Found）是没有必要的，并且会减慢用户体验，没有任何好处。</p>
 <p>有些网站会提供引导性的404“你的意思是X？”，这对用户体验来说很好，但是浪费了服务器资源（如数据库等）。尤其糟糕的是当外部JavaScript的链接是错误的然后结果是404。首先，这个下载将会阻碍并行下载。然后，浏览器可能尝试解析404响应正文，就好像它是JavaScript代码一样，试图在里面找到有用的东西。</p>
 <hr>
-<p>###JavaScript、CSS</p>
-<p>####将脚本放在底部<br>脚本造成的问题是它们限制了并行下载。<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.1.4" target="_blank" rel="external">http/1.1规范</a>建议每个主机并行下载的组件数不超过两个。如果你的图片由多个主机提供，则你可以并行下载两个以上的图片组件。但是，当下载一个脚本时，即使是在不同的主机，浏览器也不会开始其它任何下载。</p>
+<h3 id="JavaScript、CSS"><a href="#JavaScript、CSS" class="headerlink" title="JavaScript、CSS"></a>JavaScript、CSS</h3><p>####将脚本放在底部<br>脚本造成的问题是它们限制了并行下载。<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.1.4" target="_blank" rel="external">http/1.1规范</a>建议每个主机并行下载的组件数不超过两个。如果你的图片由多个主机提供，则你可以并行下载两个以上的图片组件。但是，当下载一个脚本时，即使是在不同的主机，浏览器也不会开始其它任何下载。</p>
 <p>在某些场合下，将脚本移动到底部并不容易。例如，脚本使用<code>document.write</code>插入页面内容的一部分，在这种情况下，脚本是不能下移的。也可能有作用域问题。在很多情况下，这是解决这些问题的变通方案。</p>
 <p>经常出现的可选择的建议是使用延迟脚本。<code>DEFER</code>属性表明该脚本不包含<code>document.write</code>，提示浏览器它们可以继续渲染。不幸的是，Firefox不支持<code>DEFER</code>属性。在IE浏览器中，脚本可以被延迟加载，但是不如预期的多。如果一个脚本可以被延迟加载，那么它也可以被移动到页面底部。这样会使你的页面加载更快。</p>
 <hr>
-<p>####移除重复脚本<br>如果一个页面中包含两次相同的JavaScript文件会使性能受损。这不是像你想象的那样不寻常。对美国十大网站的回顾表明，有两个包含重复脚本。两个主要的因素增加了单一页面脚本重复的几率：团队的规模和脚本的数量。当这种情况发生时，重复脚本通过增加http请求和消耗JavaScript执行来损害性能。</p>
+<h4 id="移除重复脚本"><a href="#移除重复脚本" class="headerlink" title="移除重复脚本"></a>移除重复脚本</h4><p>如果一个页面中包含两次相同的JavaScript文件会使性能受损。这不是像你想象的那样不寻常。对美国十大网站的回顾表明，有两个包含重复脚本。两个主要的因素增加了单一页面脚本重复的几率：团队的规模和脚本的数量。当这种情况发生时，重复脚本通过增加http请求和消耗JavaScript执行来损害性能。</p>
 <p>不必要的http请求发生在IE浏览器中而不是Firefox浏览器。在IE浏览器中，如果一个外部脚本包含了两个并且没有被缓存那么在页面加载时它会发生两次http请求。即使脚本被缓存了，当用户重载页面时额外的http请求也会发生。</p>
 <p>除了产生浪费的http请求外，时间被浪费在多次评估脚本上。不管脚本是否被缓存，Firefox和IE都会发生多余的JavaScript执行。</p>
 <p>避免意外地包含相同的脚本两次的一种方法是在你的模板系统中实现一个脚本管理模块。包含脚本的典型方法是在HTML页面中使用<code>Script</code>标签。</p>
@@ -171,46 +170,45 @@
 <p>PHP中的一个代替方法是创建一个名为<code>insertScript</code>函数。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;menu_1.0.17.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <p> 除了防止多次插入相同的脚本，该函数还可以处理其它脚本问题，例如检查依赖以及将版本号添加到脚本文件上以支持将来的<code>Expires</code>标头。</p>
 <hr>
-<p>####最小化DOM访问次数<br>使用JavaScript访问DOM元素很慢，为了得到更快的响应页面，你应该：</p>
+<h4 id="最小化DOM访问次数"><a href="#最小化DOM访问次数" class="headerlink" title="最小化DOM访问次数"></a>最小化DOM访问次数</h4><p>使用JavaScript访问DOM元素很慢，为了得到更快的响应页面，你应该：</p>
 <ul>
 <li>缓存已访问的元素的引用</li>
 <li>“离线地”更新节点，然后将它们添加到DOM树中</li>
 <li>避免使用JavaScript修复布局<br>如需了解更多信息请查看Julien Lecomte在YUI讲堂的文章 <a href="https://yuiblog.com/blog/2007/12/20/video-lecomte/" target="_blank" rel="external">High Performance Ajax Applications</a></li>
 </ul>
 <hr>
-<p>####开发敏捷的事件处理<br>有时我们感觉页面响应速度较慢的原因是太多的事件处理被绑定到了DOM树的不同元素上，然后被频繁执行。这是为什么使用<strong>事件委托</strong>是一个好方法。如果你的<code>div</code>里面有10个按钮，只给div容器一个事件处理，而不是为每一个按钮都添加一个事件处理。事件会冒泡，所以你可以捕捉到事件发生并弄清楚它是从哪一个按钮起源的。</p>
+<h4 id="开发敏捷的事件处理"><a href="#开发敏捷的事件处理" class="headerlink" title="开发敏捷的事件处理"></a>开发敏捷的事件处理</h4><p>有时我们感觉页面响应速度较慢的原因是太多的事件处理被绑定到了DOM树的不同元素上，然后被频繁执行。这是为什么使用<strong>事件委托</strong>是一个好方法。如果你的<code>div</code>里面有10个按钮，只给div容器一个事件处理，而不是为每一个按钮都添加一个事件处理。事件会冒泡，所以你可以捕捉到事件发生并弄清楚它是从哪一个按钮起源的。</p>
 <p>你也不需要等待onload事件才开始使用DOM树。通常你需要的只是你想访问的元素在树中可用。你不必等待下载完所有的图片。你可能需要考虑使用<code>DOMContentLoaded</code>而不是<code>onload</code>，但是直到它在所有浏览器都可用之前，你可以使用<a href="https://developer.yahoo.com/yui/event/" target="_blank" rel="external">YUI Event</a>工具，它有一个<a href="https://developer.yahoo.com/yui/event/#onavailable=" target="_blank" rel="external">onAvailable</a>方法。</p>
 <p>如需了解更多信息请查看Julien Lecomte在YUI讲堂的文章<a href="https://yuiblog.com/blog/2007/12/20/video-lecomte/" target="_blank" rel="external">High Performance Ajax Applications</a>。</p>
 <hr>
-<p>####将样式表放在顶部<br>在研究Yahoo!的性能时，我们发现将样式表移动到文档头部时页面加载速度看起来更快。这是因为将样式表移动到头部可以使页面逐步渲染。</p>
+<h4 id="将样式表放在顶部"><a href="#将样式表放在顶部" class="headerlink" title="将样式表放在顶部"></a>将样式表放在顶部</h4><p>在研究Yahoo!的性能时，我们发现将样式表移动到文档头部时页面加载速度看起来更快。这是因为将样式表移动到头部可以使页面逐步渲染。</p>
 <p>关注性能表现的前端工程师希望页面逐步加载。也就是说，我们希望浏览器尽可能快地展示它拥有的任何内容。对于拥有很多内容的页面和网络连接较差的用户来说，这一点尤其重要。诸如进度提示等给用户视觉反馈的重要性已经得到了很好的研究和<a href="http://www.useit.com/papers/responsetime.html" target="_blank" rel="external">记录</a>。在我们的例子中，HTML页面就是进度展示器！当浏览器逐步加载页面时，页眉、导航条、商标等都作为用户等待页面的视觉反馈。这提高了整体用户体验。</p>
 <p>将样式表放在靠近文档底部位置的问题是在很多浏览器（包括IE）中它阻止了逐步渲染。这些浏览器阻止渲染以避免当页面中的元素样式改变后不得不重新渲染它们。用户会等待在空白页面。</p>
 <p><a href="https://www.w3.org/TR/html4/struct/links.html#h-12.3" target="_blank" rel="external">HTML规范</a>中明确指出，样式表应该包含在页面的头部：“不同于A，[LINK]可能仅出现在文档的头部，尽管它可能出现多次。”即使这两种方案都不选择，空白屏幕或者没有样式内容的flash都是值得冒险的。最佳的解决方案是遵循HTML规范，将你的样式表放在文档头部。</p>
 <hr>
-<p>####避免使用CSS表达式<br>CSS表达式是动态设置CSS属性的一种强大（并且危险）的方法。IE浏览器从版本5开始支持，但是<a href="http://msdn.microsoft.com/en-us/library/ms537634%28VS.85%29.aspx" target="_blank" rel="external">从IE8开始又弃用</a>。例如，可以使用CSS表达式设置背景色每小时交替一次。</p>
+<h4 id="避免使用CSS表达式"><a href="#避免使用CSS表达式" class="headerlink" title="避免使用CSS表达式"></a>避免使用CSS表达式</h4><p>CSS表达式是动态设置CSS属性的一种强大（并且危险）的方法。IE浏览器从版本5开始支持，但是<a href="http://msdn.microsoft.com/en-us/library/ms537634%28VS.85%29.aspx" target="_blank" rel="external">从IE8开始又弃用</a>。例如，可以使用CSS表达式设置背景色每小时交替一次。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">background-color: expression( (new Date()).getHours()%2 ? &quot;#B8D4FF&quot; : &quot;#F08A00&quot; );</div></pre></td></tr></table></figure>
 <p>正如这里所示，表达式方法接受一个JavaScript表达式。CSS属性设置为JavaScript表达式计算的结果。此<code>expression</code>方法被其它浏览器忽略，所以在IE浏览器中设置需要跨浏览器创建一致体验的属性时非常有用。</p>
 <p>表达式的问题在于，它们被估算的频率超出了人们的预期。不仅在页面被渲染和调整大小时，在页面滚动甚至当用户在页面上移动鼠标时表达式都会被估算。给CSS表达式添加一个计数器允许我们跟踪CSS表达式被估算的时间和频率。在页面移动鼠标可以轻松导致超过10000次的估算。</p>
 <p>减少CSS表达式估算次数的一种方法是使用一次性表达式。当第一次对表达式求值后就给样式属性设置一个确定的值，以此代替CSS表达式。如果样式属性需要在页面的生命周期过程中动态设置，使用事件处理而不是CSS表达式是一个可供选择的方法。如果你必须使用CSS表达式，请记住，它们可能被计算成千上万次，并可能影响你的页面性能。</p>
 <hr>
-<p>####使用<code>&lt;link&gt;</code>而不是@import<br>以前的最佳实践之一表明CSS应该放在顶部以便允许渐进渲染。</p>
+<h4 id="使用-lt-link-gt-而不是-import"><a href="#使用-lt-link-gt-而不是-import" class="headerlink" title="使用&lt;link&gt;而不是@import"></a>使用<code>&lt;link&gt;</code>而不是@import</h4><p>以前的最佳实践之一表明CSS应该放在顶部以便允许渐进渲染。</p>
 <p>在IE中<code>@import</code>的表现与将<code>&lt;link&gt;</code>放在页面底部一样，所以最好不要使用它。</p>
 <hr>
-<p>####避免过滤器<br>IE独有的<code>AlphaImageLoader</code>过滤器旨在解决IE版本小于7的半透明真彩色PNG的问题。这个过滤器的问题是它阻碍了渲染并且当下载图片时会冻结浏览器。它也增加了内存消耗，并应用于每个元素，而不是每个图片，所以问题倍增。</p>
+<h4 id="避免过滤器"><a href="#避免过滤器" class="headerlink" title="避免过滤器"></a>避免过滤器</h4><p>IE独有的<code>AlphaImageLoader</code>过滤器旨在解决IE版本小于7的半透明真彩色PNG的问题。这个过滤器的问题是它阻碍了渲染并且当下载图片时会冻结浏览器。它也增加了内存消耗，并应用于每个元素，而不是每个图片，所以问题倍增。</p>
 <p>最好的方法是完全避免<code>AlphaImageLoader</code>，而使用优雅降级的PNG8，它在IE中表现良好。如果你确实需要<code>AlphaImageLoader</code>，请使用修改的带下划线的<code>_filter</code>，以免惩罚IE版本超过7用户。</p>
 <hr>
-<p>####将JavaScript和CSS放置在外部文件<br>很多性能规则涉及如何管理外部组件。然而，在考虑这些之前你应该提出一个更加基本的问题：JavaScript和CSS文件到底应该包含在外部文件中还是页面本身中？</p>
+<h4 id="将JavaScript和CSS放置在外部文件"><a href="#将JavaScript和CSS放置在外部文件" class="headerlink" title="将JavaScript和CSS放置在外部文件"></a>将JavaScript和CSS放置在外部文件</h4><p>很多性能规则涉及如何管理外部组件。然而，在考虑这些之前你应该提出一个更加基本的问题：JavaScript和CSS文件到底应该包含在外部文件中还是页面本身中？</p>
 <p>在现实世界里使用外部文件通常会产生更快的页面，因为浏览器会缓存JavaScript和CSS文件。而包含在HTML文档本身的JavaScript和CSS文件，每次请求都会下载它们，这减少了所需的http请求，但是增加了HTML文档的大小。换句话说，如果在外部文件里的JavaScript和CSS文件被浏览器缓存了，在不增加http请求的数量同时减少了HTML文档的大小。</p>
 <p>关键因素是外部JavaScript和CSS组件相对于HTML文档请求数量的缓存频率。尽管该因素难以度量，但是仍然可以通过各种指标来衡量。如果你的网站上的用户在每一次会话过程中都会浏览多个页面，并且你的很多页面重复使用了相同的脚本和样式表，那么你将从缓存的外部文件中得到更多的潜在收益。</p>
 <p>很多网站处于这些指标之间。对于这些网站，通常最好的做法是将JavaScript和CSS文件作为外部文件部署。唯一的例外是主页，例如<a href="https://www.yahoo.com/" target="_blank" rel="external">Yahoo!’s front page</a>和<a href="https://my.yahoo.com/" target="_blank" rel="external">My Yahoo!</a>，对于这类页面，将文件内联是更合适的做法。每次会话只有很少（可能只有一次）的主页可能发现，将JavaScript和CSS文件内联会得到更快的终端用户响应时间。</p>
 <p>首页通常是页面浏览中的第一个，有一些技术利用了内联产生的http请求的减少以及使用外部文件获得的缓存效益。其中一种方法是在首页内嵌JavaScript和CSS文件，在页面加载完成后动态下载外部文件。后续页面将引用这些应该已经缓存与浏览器中的外部文件。</p>
 <hr>
-<p>####缩小JavaScript和CSS<br>缩小是移除代码中不必要的字符来减小代码大小从而提高加载时间的惯例。当缩小代码时，所有的注释都要移除，同理，包括不需要的空白字符（空格、换行以及制表符）。至于JavaScript，这种做法提高了响应时间性能，因为需要下载的文件的大小被减小了。<a href="http://crockford.com/javascript/jsmin" target="_blank" rel="external">JSMin</a>和<a href="https://developer.yahoo.com/yui/compressor/" target="_blank" rel="external">YUI Compressor</a>是两款缩小JavaScript代码的流行工具。其中，<code>YUI Compressor</code>还可以缩小CSS大小。</p>
+<h4 id="缩小JavaScript和CSS"><a href="#缩小JavaScript和CSS" class="headerlink" title="缩小JavaScript和CSS"></a>缩小JavaScript和CSS</h4><p>缩小是移除代码中不必要的字符来减小代码大小从而提高加载时间的惯例。当缩小代码时，所有的注释都要移除，同理，包括不需要的空白字符（空格、换行以及制表符）。至于JavaScript，这种做法提高了响应时间性能，因为需要下载的文件的大小被减小了。<a href="http://crockford.com/javascript/jsmin" target="_blank" rel="external">JSMin</a>和<a href="https://developer.yahoo.com/yui/compressor/" target="_blank" rel="external">YUI Compressor</a>是两款缩小JavaScript代码的流行工具。其中，<code>YUI Compressor</code>还可以缩小CSS大小。</p>
 <p>混淆是可以应用与源代码的一种可选择的优化。它比缩小更加复杂，因此更容易在混淆这一步产生问题。在对美国十大网站调查中，缩小可以减少21%，而混淆可以达到25%。尽管混淆可以减少更多，但是缩小风险更小。</p>
 <p>除了缩小外部脚本和样式，内联的脚本和样式可以也应该被缩小。即使你gzip你的脚本和样式，缩小仍然可以减少5%或者更多的大小。随着JavaScript和CSS是使用和大小都在增加，通过缩小代码获得的收益也在增加。</p>
 <hr>
-<p>###cookie</p>
-<p>####减少Cookie大小<br>http cookie由于各种原因而被使用，例如身份验证和个性化。有关cookie的信息在web服务器和浏览器之间的http头中交换。尽可能的降低cookie的大小以最小化对用户响应时间的影响是非常重要的。</p>
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><h4 id="减少Cookie大小"><a href="#减少Cookie大小" class="headerlink" title="减少Cookie大小"></a>减少Cookie大小</h4><p>http cookie由于各种原因而被使用，例如身份验证和个性化。有关cookie的信息在web服务器和浏览器之间的http头中交换。尽可能的降低cookie的大小以最小化对用户响应时间的影响是非常重要的。</p>
 <p>若需了解更多信息，请查看Tenni Theurer和Patty Chi的文章<a href="https://yuiblog.com/blog/2007/03/01/performance-research-part-3/" target="_blank" rel="external">When the Cookie Crumbles</a>。这项研究的结果：</p>
 <ul>
 <li>清除不需要的cookie</li>
@@ -223,45 +221,40 @@
 <p>如果你的域名是<code>www.example.org</code>，你可以将静态组件托管在<code>static.example.org</code>。但是，如果你已经在顶级域名<code>example.org</code>而不是<code>www.example.org</code>设置了cookie，那么所有到<code>static.example.org</code>的请求都将包含这些cookie。在这种情况下，你可以购买一个全新的域名，将你的静态组件托管在那里，并保持此域名是无cookie。Yahoo!使用<code>yimg.com</code>，YouTube使用<code>ytmg.com</code>，Amazon使用<code>images-amazon.com</code>等等。</p>
 <p>在无cookie的域名商托管静态组件的另一个好处是有些代理可能拒绝缓存带cookie请求的组件。在相关说明中，如果你想知道是否应该为你的主页使用<code>example.org</code>或者<code>www.example.org</code>，考虑cookie的影响。省略<code>www</code>让你别无选择只能将cookie写到<code>*.example.org</code>，这么多性能原因证明，最好使用<code>www</code>子域并将cookie写入子域。</p>
 <hr>
-<p>###image</p>
-<p>####优化图片<br>当完成为你的web页面而创建的图片设计之后，在你将这些图片上传到web服务器之前，仍然有一些你可以尝试的事情。</p>
+<h3 id="image"><a href="#image" class="headerlink" title="image"></a>image</h3><h4 id="优化图片"><a href="#优化图片" class="headerlink" title="优化图片"></a>优化图片</h4><p>当完成为你的web页面而创建的图片设计之后，在你将这些图片上传到web服务器之前，仍然有一些你可以尝试的事情。</p>
 <ul>
 <li>你可以检查GIF图片，看它是否使用了与图片中颜色数目一致的画板大小。使用<a href="www.imagemagick.org">imagemagick</a> 很容易通过<code>identify -verbose image.gif</code>来检查。<br>当你在画板中看到一张使用4色和256色“插槽”的图片，那还有改进的空间。<br><code>convert image.gif image.png</code><br>“我们所说的只是：给PiNG一个机会！”</li>
 <li>在所有PNG上运行<a href="https://pmt.sourceforge.io/pngcrush/" target="_blank" rel="external">pngcrush</a>（或其它任何PNG优化工具）。例如：<br><code>pngcrush image.png -rem alla -reduce -brute result.png</code></li>
 <li>在所有图片上运行jpegtran。这个工具可以执行例如旋转等无损JPEG操作，也可以从图片中优化和移除注释以及其它无用信息（例如EXIF信息）<br><code>jpegtran -copy none -optimize -perfect src.jpg dest.jpg</code></li>
 </ul>
 <hr>
-<p>####优化CSS雪碧图</p>
-<ul>
+<h4 id="优化CSS雪碧图"><a href="#优化CSS雪碧图" class="headerlink" title="优化CSS雪碧图"></a>优化CSS雪碧图</h4><ul>
 <li>将雪碧图中的图片水平放置而不是垂直通常会导致较小的文件大小</li>
 <li>在雪碧图中组合相似的颜色可以将颜色数量保持在较低的状态，理想情况下低于256色，以便适应PNG8。</li>
 <li>“移动友好的”，不要在雪碧图的图片间留下很大的差异。这不是太影响文件的大小，但是只需要较少的内存供用户代理将图片解压为像素图。100*100的图片是1万像素，1000*1000的100万像素。</li>
 </ul>
 <hr>
-<p>####不要在HTML中缩放图片<br>不要使用比你需要的还大的图片，因为你可以在HTML中设置宽度和高度。如果你需要<br><code>&lt;img width=&quot;100&quot; height=&quot;100&quot; src=&quot;mycat.jpg&quot; alt=&quot;My Cat&quot; /&gt;</code><br>那么你的图片（mycat.jpg）应该是100px*100px而不是一个按比例缩小的500*500px的图片。</p>
+<h4 id="不要在HTML中缩放图片"><a href="#不要在HTML中缩放图片" class="headerlink" title="不要在HTML中缩放图片"></a>不要在HTML中缩放图片</h4><p>不要使用比你需要的还大的图片，因为你可以在HTML中设置宽度和高度。如果你需要<br><code>&lt;img width=&quot;100&quot; height=&quot;100&quot; src=&quot;mycat.jpg&quot; alt=&quot;My Cat&quot; /&gt;</code><br>那么你的图片（mycat.jpg）应该是100px*100px而不是一个按比例缩小的500*500px的图片。</p>
 <hr>
-<p>####让favicon.ico小且可缓存<br>favicon.ico是保留在服务器根目录下。它是一种必要的不幸，因为即使你不关心它，浏览器仍然会请求它。所以最好不要响应<code>404 Not Found</code>。另外，由于它处于相同的服务器，每次请求都会发送cookie。这个图片还会干扰下载顺序，例如，在IE中，当你在onload中请求额外的组件时，favicon会在这些额外的组件之前被下载。</p>
+<h4 id="让favicon-ico小且可缓存"><a href="#让favicon-ico小且可缓存" class="headerlink" title="让favicon.ico小且可缓存"></a>让favicon.ico小且可缓存</h4><p>favicon.ico是保留在服务器根目录下。它是一种必要的不幸，因为即使你不关心它，浏览器仍然会请求它。所以最好不要响应<code>404 Not Found</code>。另外，由于它处于相同的服务器，每次请求都会发送cookie。这个图片还会干扰下载顺序，例如，在IE中，当你在onload中请求额外的组件时，favicon会在这些额外的组件之前被下载。</p>
 <p>所以为了减少拥有favicon.ico的缺点，请确保：</p>
 <ul>
 <li>它很小，最好小于1k</li>
 <li>设置让你感觉舒服的过期头（因为你不能重命名它，如果你决定改变它的话）。你几乎可以安全地设置过期头为将来的几个月。你可以检查当前favicon.ico最后被修改的日期以便做出一个明智的决定。<br><a href="http://www.imagemagick.org/script/index.php" target="_blank" rel="external">Imagemagick</a>可以帮助你创建小的favicon。</li>
 </ul>
 <hr>
-<p>###mobile</p>
-<p>####保持组件低于25k<br>这个约束与iPhone不会超过25k的组件有关。请注意，这是未压缩的大小。这就是缩小重要的地方，因为只有gzip可能还不够。</p>
+<h3 id="mobile"><a href="#mobile" class="headerlink" title="mobile"></a>mobile</h3><h4 id="保持组件低于25k"><a href="#保持组件低于25k" class="headerlink" title="保持组件低于25k"></a>保持组件低于25k</h4><p>这个约束与iPhone不会超过25k的组件有关。请注意，这是未压缩的大小。这就是缩小重要的地方，因为只有gzip可能还不够。</p>
 <p>需了解更多信息，请查看Wayne Shea和Tenni Theurer.的文章<a href="https://yuiblog.com/blog/2008/02/06/iphone-cacheability/" target="_blank" rel="external">Performance Research, Part 5: iPhone Cacheability - Making it Stick</a></p>
 <hr>
-<p>####将组件打包成多个文档<br>将组件打包成多个文档就像有附件的邮件，它可以让你只用一个http请求就获得多个组件（记住：http请求代价很高）。当你使用此技术，首先检查用户代理是否支持（iPhone不支持）。</p>
+<h4 id="将组件打包成多个文档"><a href="#将组件打包成多个文档" class="headerlink" title="将组件打包成多个文档"></a>将组件打包成多个文档</h4><p>将组件打包成多个文档就像有附件的邮件，它可以让你只用一个http请求就获得多个组件（记住：http请求代价很高）。当你使用此技术，首先检查用户代理是否支持（iPhone不支持）。</p>
 <hr>
-<p>###服务器</p>
-<p>####使用内容分发网络（cdn）<br>用户与你的web服务器的距离对响应时间也有影响。在多个分散于不同地理位置的服务器上部署网站内容将会<br>使你的网页从用户的角度更快地加载。但你应该从哪里开始呢？</p>
+<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><h4 id="使用内容分发网络（cdn）"><a href="#使用内容分发网络（cdn）" class="headerlink" title="使用内容分发网络（cdn）"></a>使用内容分发网络（cdn）</h4><p>用户与你的web服务器的距离对响应时间也有影响。在多个分散于不同地理位置的服务器上部署网站内容将会<br>使你的网页从用户的角度更快地加载。但你应该从哪里开始呢？</p>
 <p>作为实现地理位置上分散内容的第一步，不要尝试重新设计你的web应用程序以便在分布式架构中奏效。根据各异的应用，更改架构可能包括令人生畏的任务，例如同步会话状态和跨服务器位置复制数据库事务。在应用程序架构这一步尝试缩短用户和网站内容的距离可能会导致延迟或者无法通过。</p>
 <p>请记住，80%-90%的终端用户响应时间是花在下载网页中的所有组件：图片、样式表、脚本、Flash等。这是<em>性能黄金法则</em>。比起从重新设计应用程序架构这种困难的任务开始，更好的方法是首先分散你的网站中的静态内容。这不仅大大缩短了响应时间，而且得益于内容分发网络，这更容易实现。</p>
 <p>内容分发网络（CDN）是为了更加高效的将内容发送给用户的分布在多个位置的web服务器的集合。对给特定用户发送内容的服务器的选择通常基于网络距离的度量。例如，选择网络跳数最少或者响应时间最快的服务器。</p>
 <p>一些大型互联网公司拥有自己的CDN，但是利用CDN服务商（例如：<a href="https://www.akamai.com/" target="_blank" rel="external">Akamai Technologies</a>、<a href="https://www.verizondigitalmedia.com/" target="_blank" rel="external">EdgeCast</a>或者level3）是性价比最好的。对于创业公司或者私人网站，CDN服务的成本是较高的，但是随着你的目标受众的增长以及更加全球化，CDN对于获得快速响应时间来说必不可少。在雅虎，将静态内容从应用程序web服务器移到CDN（如上述的第三方以及雅虎自己的CDN），从性能上，终端用户响应时间提高了20%甚至更多。切换到CDN是一个相对简单的代码更改，将显著提高你的网站速度。</p>
 <hr>
-<p>####添加一个过期或者缓存控制头</p>
-<p>该规则有两个方面：</p>
+<h4 id="添加一个过期或者缓存控制头"><a href="#添加一个过期或者缓存控制头" class="headerlink" title="添加一个过期或者缓存控制头"></a>添加一个过期或者缓存控制头</h4><p>该规则有两个方面：</p>
 <ul>
 <li>对于静态组件：通过设置过期头为“永不过期”策略</li>
 <li>对于动态组件：使用适当的缓存控制头来帮助浏览器有条件的请求</li>
@@ -273,7 +266,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ExpiresDefault &quot;access plus 10 years&quot;</div></pre></td></tr></table></figure>
 <p>请记住，一旦你使用了将来过期头，对于组件的任何改变你都要修改组件名。在雅虎，我们通常将这一步放入到构建过程中：将版本号嵌于组件名中，例如，yahoo_2.0.6.js。</p>
 <p>只有用户已经访问过你的网站，使用将来过期头才会影响页面浏览。对于那些首次访问你的网站的用户来说，他们的浏览器并没有缓存，使用将来过期头对http请求的数量并没有影响。因此，这种性能改善的影响取决于用户多久访问一次有缓存的页面。（有缓存包含了页面中的所有组件）在雅虎，我们计算并发现，有缓存的页面浏览量为75%-85%。通过使用将来过期头，你可以增加被浏览器缓存的组件的数量，并且可以在后续的页面浏览中重新使用这些组件而无需在用户的网络连接上额外单独发送一个字节。</p>
-<p>####Gzip 组件<br>网络传输的http请求和响应所花费的时间可以通过前端工程师的策略而极大的减少。的确，终端用户的带宽速度、因特网服务提供商以及对等交换点的距离等因素超出了开发团队的控制范围。但是仍然有其它原因影响响应时间。压缩通过减少http响应的大小来缩短响应时间。</p>
+<h4 id="Gzip-组件"><a href="#Gzip-组件" class="headerlink" title="Gzip 组件"></a>Gzip 组件</h4><p>网络传输的http请求和响应所花费的时间可以通过前端工程师的策略而极大的减少。的确，终端用户的带宽速度、因特网服务提供商以及对等交换点的距离等因素超出了开发团队的控制范围。但是仍然有其它原因影响响应时间。压缩通过减少http响应的大小来缩短响应时间。</p>
 <p>从http/1.1开始，web客户端通过http 请求中的<code>Accept-Encoding</code>标头表示对压缩的支持。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Accept-Encoding: gzip, deflate</div></pre></td></tr></table></figure>
 <p>如果web服务器在请求中看到了此标头，它可以使用客户端列出的方法之一进行压缩响应。web服务器通过响应中的<code>Content-Encoding</code>标头通知web客户端。</p>
@@ -284,7 +277,7 @@
 <p>服务器根据文件类型选择要压缩的内容，但是通常压缩的内容有限。大多数网站会gzip他们的HTML文档。gzip你的脚本和样式表也是值得的，但很多网站错过了这个机会。事实上，压缩任何文本响应包括XML和JSON都是值得的。图片和PDF文件不应该被gzip因为它们已经被压缩过了。尝试gzip图片和PDF不仅浪费CPU性能，也可能增加文件的大小。</p>
 <p>对尽可能多的文件类型进行压缩是一种减少网页负担并加速用户体验的简单方法。</p>
 <hr>
-<p>####配置ETags<br>实体标签（ETags）是web服务器和浏览器用来判断浏览器中的缓存中的组件是否与源服务器上的相匹配的机制。（实体是组件的另一种称呼：图片、脚本、样式表等）添加ETags来提供验证实体的机制比最后修改时间更加灵活。ETag是验证组件特定版本的唯一字符串。唯一的格式约束是该字符串应该被引用。源服务器使用<code>ETag</code>响应头指定组件的ETag。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">http/1.1 200 OK</div><div class="line">   Last-Modified: Tue, 12 Dec 2006 03:03:59 GMT</div><div class="line">   ETag: &quot;10c24bc-4ab-457e1c1f&quot;</div><div class="line">   Content-Length: 12195</div></pre></td></tr></table></figure></p>
+<h4 id="配置ETags"><a href="#配置ETags" class="headerlink" title="配置ETags"></a>配置ETags</h4><p>实体标签（ETags）是web服务器和浏览器用来判断浏览器中的缓存中的组件是否与源服务器上的相匹配的机制。（实体是组件的另一种称呼：图片、脚本、样式表等）添加ETags来提供验证实体的机制比最后修改时间更加灵活。ETag是验证组件特定版本的唯一字符串。唯一的格式约束是该字符串应该被引用。源服务器使用<code>ETag</code>响应头指定组件的ETag。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">http/1.1 200 OK</div><div class="line">   Last-Modified: Tue, 12 Dec 2006 03:03:59 GMT</div><div class="line">   ETag: &quot;10c24bc-4ab-457e1c1f&quot;</div><div class="line">   Content-Length: 12195</div></pre></td></tr></table></figure></p>
 <p> 之后，如果浏览器必须验证组件，则使用<code>If-None-Match</code>标头将ETag传递回源服务器。如果ETags匹配，则返回一个304状态码，这个例子减少了12195字节的响应。<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">GET /i/yahoo.gif http/1.1</div><div class="line"> Host: us.yimg.com</div><div class="line"> If-Modified-Since: Tue, 12 Dec 2006 03:03:59 GMT</div><div class="line"> If-None-Match: &quot;10c24bc-4ab-457e1c1f&quot;</div><div class="line"> http/1.1 304 Not Modified</div></pre></td></tr></table></figure></p>
 <p> ETags的问题在于它们通常是用属性构建的，这些属性使它们对于托管站点的服务器是唯一的。当浏览器从服务器获得原始组件，然后试图在另一台不同的服务器验证组件时，ETags将无法匹配。在使用服务器集群处理请求的Web站点上，这种情况太常见了。默认情况下，Apache和IIS服务器都将数据嵌入ETag里，这大大降低了随后在包含多个服务器的网站的有效性测试的几率。</p>
 <p>Apache1.3和2.x上ETag的格式是<code>inode-size-timestamp</code>。尽管给定的文件可能位于多个服务器的相同目录，并且大小、权限和时间戳等也相同，不同服务器上的inode是不同的。</p>
@@ -293,7 +286,7 @@
 <p>如果你没有利用ETags提供的灵活的验证模型，最好将ETag完全移除。<code>Last-Modified</code>标头基于组件的时间戳进行验证。移除ETag减少了响应和后续请求中http头的大小。此<a href="https://support.microsoft.com/zh-cn/help/922733/the-performance-of-a-web-application-may-decrease--and-the-network-ban" target="_blank" rel="external">Microsoft Support article</a>描述了如何移除ETags。在Apache中，移除ETags只需要简单的在Apache配置文件中添加下行：</p>
 <pre><code>FileETag none
 </code></pre><hr>
-<p>####尽早释放缓冲<br>当用户请求页面时，后台服务器可能需要200-500毫秒来拼接HTML页面。在这个期间，浏览器是空闲的，它在等待数据的到来。在PHP中你有<a href="http://php.net/flush" target="_blank" rel="external">flush()</a>函数。它允许你将部分就绪的HTML响应发送到浏览器，这样浏览器就可以开始获取组件，而你的后端则忙于处理HTML页面的其余部分。这种好处主要体现在忙碌的后端或者轻便的前端。</p>
+<h4 id="尽早释放缓冲"><a href="#尽早释放缓冲" class="headerlink" title="尽早释放缓冲"></a>尽早释放缓冲</h4><p>当用户请求页面时，后台服务器可能需要200-500毫秒来拼接HTML页面。在这个期间，浏览器是空闲的，它在等待数据的到来。在PHP中你有<a href="http://php.net/flush" target="_blank" rel="external">flush()</a>函数。它允许你将部分就绪的HTML响应发送到浏览器，这样浏览器就可以开始获取组件，而你的后端则忙于处理HTML页面的其余部分。这种好处主要体现在忙碌的后端或者轻便的前端。</p>
 <p>一个考虑刷新的好地方是在头部之后，因为头部的HTML通常更容易生成，并且允许你包含CSS和JavaScript文件，让浏览器在后端仍在处理的同时并行读取。</p>
 <p>例如：</p>
 <pre><code>...&lt;!-- css, js --&gt;
@@ -303,10 +296,10 @@
 ...&lt;!-- content --&gt;
 </code></pre><p><a href="https://search.yahoo.com/" target="_blank" rel="external">Yahoo! search</a>开创了研究和真正的用户测试，以证明使用这种技术的好处。</p>
 <hr>
-<p>####使用GET进行Ajax请求<br><a href="https://login.yahoo.com/?.src=ym&amp;.intl=us&amp;.done=https://mail.yahoo.com/" target="_blank" rel="external">Yahoo! Mail</a>团队发现，当使用<code>XMLHttpRequest</code>时，POST在浏览器中分两个步骤实现：首先发送头部，然后发送数据。所以最好使用GET，它只需一个TCP包发送（除非你有很多的cookies）。IE中URL最大的长度是2k，所以如果你需要发送超过2k的数据，你可能无法使用GET。</p>
+<h4 id="使用GET进行Ajax请求"><a href="#使用GET进行Ajax请求" class="headerlink" title="使用GET进行Ajax请求"></a>使用GET进行Ajax请求</h4><p><a href="https://login.yahoo.com/?.src=ym&amp;.intl=us&amp;.done=https://mail.yahoo.com/" target="_blank" rel="external">Yahoo! Mail</a>团队发现，当使用<code>XMLHttpRequest</code>时，POST在浏览器中分两个步骤实现：首先发送头部，然后发送数据。所以最好使用GET，它只需一个TCP包发送（除非你有很多的cookies）。IE中URL最大的长度是2k，所以如果你需要发送超过2k的数据，你可能无法使用GET。</p>
 <p>一个有趣的副作用是，如果POST没有发送任何数据，那么它将表现得和GET一样。根据<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html" target="_blank" rel="external">http 规范</a>，GET是用来获取信息的，所以在请求数据时使用GET是有意义的(语义上的)，而不是将数据发送到服务器端。</p>
 <hr>
-<p>####避免空的图片src<br>空字符串<code>src</code>属性图片发生的情况超出了预期。它有两种表现形式：</p>
+<h4 id="避免空的图片src"><a href="#避免空的图片src" class="headerlink" title="避免空的图片src"></a>避免空的图片src</h4><p>空字符串<code>src</code>属性图片发生的情况超出了预期。它有两种表现形式：</p>
 <ul>
 <li>直接的HTML<br><code>&lt;img src=&quot;&quot;&gt;</code></li>
 <li><p>JavaScript</p>
@@ -336,7 +329,7 @@ img.src = &quot;&quot;;
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2017/11/22/（译）网站加速最佳实践——雅虎35条/" data-id="cjab5ogiz000dagvpgebvzhl9" class="article-share-link" data-share="baidu" data-title="（译）网站加速最佳实践——雅虎35条">分享到</a>
+        <a data-url="http://yoursite.com/2017/11/22/（译）网站加速最佳实践——雅虎35条/" data-id="cjab5z6pv000cbwvpo5bt1yvz" class="article-share-link" data-share="baidu" data-title="（译）网站加速最佳实践——雅虎35条">分享到</a>
       
 
       
