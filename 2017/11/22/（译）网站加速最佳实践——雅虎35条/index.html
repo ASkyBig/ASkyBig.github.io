@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/22/（译）网站加速最佳实践——雅虎35条/index.html">
 <meta property="og:site_name" content="Yang Jian&#39;s blog">
 <meta property="og:description" content="花了一个星期翻译了一下雅虎35条，这是原文地址。水平有限，欢迎邮箱(yangj0412@foxmail.com)指正。">
-<meta property="og:updated_time" content="2017-11-22T14:48:14.513Z">
+<meta property="og:updated_time" content="2017-11-22T14:53:17.873Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="（译）网站加速最佳实践——雅虎35条">
 <meta name="twitter:description" content="花了一个星期翻译了一下雅虎35条，这是原文地址。水平有限，欢迎邮箱(yangj0412@foxmail.com)指正。">
@@ -96,7 +96,7 @@
       
         <p>花了一个星期翻译了一下雅虎35条，这是<a href="https://developer.yahoo.com/performance/rules.html" target="_blank" rel="external">原文地址</a>。水平有限，欢迎邮箱(yangj0412@foxmail.com)指正。</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>（雅虎的）卓越的性能团队已经确定了一些提升网页速度的最佳实践。该清单包括35条，分为7大类。</p>
-<h3 id="1、内容"><a href="#1、内容" class="headerlink" title="1、内容"></a>1、内容</h3><p>####最小化http请求<br>终端用户响应时间的80%用在前端。这个时间中的大部分都是在下载页面中的所有组件：图片、样式表、脚本、Flash等。减少组件的数量顺带减少了渲染页面所需的http请求的数量。<strong>这是页面加速的关键</strong>。</p>
+<h3 id="1、内容"><a href="#1、内容" class="headerlink" title="1、内容"></a>1、内容</h3><h4 id="最小化http请求"><a href="#最小化http请求" class="headerlink" title="最小化http请求"></a>最小化http请求</h4><p>终端用户响应时间的80%用在前端。这个时间中的大部分都是在下载页面中的所有组件：图片、样式表、脚本、Flash等。减少组件的数量顺带减少了渲染页面所需的http请求的数量。<strong>这是页面加速的关键</strong>。</p>
 <p>减少页面中组件数量的一种方法是简化页面的设计。但是，有没有一种方法，在构建包含丰富内容的页面同时获得快速的响应时间？以下是一些减少http请求的同时又支持丰富的页面设计的技术。</p>
 <p><strong>组合文件</strong>是一种减少http请求数量的方法。将所有的脚本文件组合成一个单独的脚本文件；同理，将所有的CSS文件组合成一个单独的样式表。当脚本和样式表因页面而异时，组合文件会更加具有挑战性。但是，在你的网站发布过程中克服这一部分，将会提升响应时间。</p>
 <p><strong>CSS精灵</strong>（很多人管它叫<strong>雪碧图</strong>）是减少图片请求数量的首选方法。将所有的背景图片组合成单独的一张，利用CSS的<code>background-image</code>和<code>background-position</code>属性来展现需要的图片部分。</p>
@@ -158,7 +158,7 @@
 <h4 id="没有404"><a href="#没有404" class="headerlink" title="没有404"></a>没有404</h4><p>http请求代价高昂，提出一个http请求得到一个无用的响应（即404 Not Found）是没有必要的，并且会减慢用户体验，没有任何好处。</p>
 <p>有些网站会提供引导性的404“你的意思是X？”，这对用户体验来说很好，但是浪费了服务器资源（如数据库等）。尤其糟糕的是当外部JavaScript的链接是错误的然后结果是404。首先，这个下载将会阻碍并行下载。然后，浏览器可能尝试解析404响应正文，就好像它是JavaScript代码一样，试图在里面找到有用的东西。</p>
 <hr>
-<h3 id="JavaScript、CSS"><a href="#JavaScript、CSS" class="headerlink" title="JavaScript、CSS"></a>JavaScript、CSS</h3><p>####将脚本放在底部<br>脚本造成的问题是它们限制了并行下载。<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.1.4" target="_blank" rel="external">http/1.1规范</a>建议每个主机并行下载的组件数不超过两个。如果你的图片由多个主机提供，则你可以并行下载两个以上的图片组件。但是，当下载一个脚本时，即使是在不同的主机，浏览器也不会开始其它任何下载。</p>
+<h3 id="2和3、JavaScript、CSS"><a href="#2和3、JavaScript、CSS" class="headerlink" title="2和3、JavaScript、CSS"></a>2和3、JavaScript、CSS</h3><p>####将脚本放在底部<br>脚本造成的问题是它们限制了并行下载。<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html#sec8.1.4" target="_blank" rel="external">http/1.1规范</a>建议每个主机并行下载的组件数不超过两个。如果你的图片由多个主机提供，则你可以并行下载两个以上的图片组件。但是，当下载一个脚本时，即使是在不同的主机，浏览器也不会开始其它任何下载。</p>
 <p>在某些场合下，将脚本移动到底部并不容易。例如，脚本使用<code>document.write</code>插入页面内容的一部分，在这种情况下，脚本是不能下移的。也可能有作用域问题。在很多情况下，这是解决这些问题的变通方案。</p>
 <p>经常出现的可选择的建议是使用延迟脚本。<code>DEFER</code>属性表明该脚本不包含<code>document.write</code>，提示浏览器它们可以继续渲染。不幸的是，Firefox不支持<code>DEFER</code>属性。在IE浏览器中，脚本可以被延迟加载，但是不如预期的多。如果一个脚本可以被延迟加载，那么它也可以被移动到页面底部。这样会使你的页面加载更快。</p>
 <hr>
@@ -208,7 +208,7 @@
 <p>混淆是可以应用与源代码的一种可选择的优化。它比缩小更加复杂，因此更容易在混淆这一步产生问题。在对美国十大网站调查中，缩小可以减少21%，而混淆可以达到25%。尽管混淆可以减少更多，但是缩小风险更小。</p>
 <p>除了缩小外部脚本和样式，内联的脚本和样式可以也应该被缩小。即使你gzip你的脚本和样式，缩小仍然可以减少5%或者更多的大小。随着JavaScript和CSS是使用和大小都在增加，通过缩小代码获得的收益也在增加。</p>
 <hr>
-<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><h4 id="减少Cookie大小"><a href="#减少Cookie大小" class="headerlink" title="减少Cookie大小"></a>减少Cookie大小</h4><p>http cookie由于各种原因而被使用，例如身份验证和个性化。有关cookie的信息在web服务器和浏览器之间的http头中交换。尽可能的降低cookie的大小以最小化对用户响应时间的影响是非常重要的。</p>
+<h3 id="4、cookie"><a href="#4、cookie" class="headerlink" title="4、cookie"></a>4、cookie</h3><h4 id="减少Cookie大小"><a href="#减少Cookie大小" class="headerlink" title="减少Cookie大小"></a>减少Cookie大小</h4><p>http cookie由于各种原因而被使用，例如身份验证和个性化。有关cookie的信息在web服务器和浏览器之间的http头中交换。尽可能的降低cookie的大小以最小化对用户响应时间的影响是非常重要的。</p>
 <p>若需了解更多信息，请查看Tenni Theurer和Patty Chi的文章<a href="https://yuiblog.com/blog/2007/03/01/performance-research-part-3/" target="_blank" rel="external">When the Cookie Crumbles</a>。这项研究的结果：</p>
 <ul>
 <li>清除不需要的cookie</li>
@@ -221,7 +221,7 @@
 <p>如果你的域名是<code>www.example.org</code>，你可以将静态组件托管在<code>static.example.org</code>。但是，如果你已经在顶级域名<code>example.org</code>而不是<code>www.example.org</code>设置了cookie，那么所有到<code>static.example.org</code>的请求都将包含这些cookie。在这种情况下，你可以购买一个全新的域名，将你的静态组件托管在那里，并保持此域名是无cookie。Yahoo!使用<code>yimg.com</code>，YouTube使用<code>ytmg.com</code>，Amazon使用<code>images-amazon.com</code>等等。</p>
 <p>在无cookie的域名商托管静态组件的另一个好处是有些代理可能拒绝缓存带cookie请求的组件。在相关说明中，如果你想知道是否应该为你的主页使用<code>example.org</code>或者<code>www.example.org</code>，考虑cookie的影响。省略<code>www</code>让你别无选择只能将cookie写到<code>*.example.org</code>，这么多性能原因证明，最好使用<code>www</code>子域并将cookie写入子域。</p>
 <hr>
-<h3 id="image"><a href="#image" class="headerlink" title="image"></a>image</h3><h4 id="优化图片"><a href="#优化图片" class="headerlink" title="优化图片"></a>优化图片</h4><p>当完成为你的web页面而创建的图片设计之后，在你将这些图片上传到web服务器之前，仍然有一些你可以尝试的事情。</p>
+<h3 id="5、image"><a href="#5、image" class="headerlink" title="5、image"></a>5、image</h3><h4 id="优化图片"><a href="#优化图片" class="headerlink" title="优化图片"></a>优化图片</h4><p>当完成为你的web页面而创建的图片设计之后，在你将这些图片上传到web服务器之前，仍然有一些你可以尝试的事情。</p>
 <ul>
 <li>你可以检查GIF图片，看它是否使用了与图片中颜色数目一致的画板大小。使用<a href="www.imagemagick.org">imagemagick</a> 很容易通过<code>identify -verbose image.gif</code>来检查。<br>当你在画板中看到一张使用4色和256色“插槽”的图片，那还有改进的空间。<br><code>convert image.gif image.png</code><br>“我们所说的只是：给PiNG一个机会！”</li>
 <li>在所有PNG上运行<a href="https://pmt.sourceforge.io/pngcrush/" target="_blank" rel="external">pngcrush</a>（或其它任何PNG优化工具）。例如：<br><code>pngcrush image.png -rem alla -reduce -brute result.png</code></li>
@@ -243,12 +243,12 @@
 <li>设置让你感觉舒服的过期头（因为你不能重命名它，如果你决定改变它的话）。你几乎可以安全地设置过期头为将来的几个月。你可以检查当前favicon.ico最后被修改的日期以便做出一个明智的决定。<br><a href="http://www.imagemagick.org/script/index.php" target="_blank" rel="external">Imagemagick</a>可以帮助你创建小的favicon。</li>
 </ul>
 <hr>
-<h3 id="mobile"><a href="#mobile" class="headerlink" title="mobile"></a>mobile</h3><h4 id="保持组件低于25k"><a href="#保持组件低于25k" class="headerlink" title="保持组件低于25k"></a>保持组件低于25k</h4><p>这个约束与iPhone不会超过25k的组件有关。请注意，这是未压缩的大小。这就是缩小重要的地方，因为只有gzip可能还不够。</p>
+<h3 id="6、mobile"><a href="#6、mobile" class="headerlink" title="6、mobile"></a>6、mobile</h3><h4 id="保持组件低于25k"><a href="#保持组件低于25k" class="headerlink" title="保持组件低于25k"></a>保持组件低于25k</h4><p>这个约束与iPhone不会超过25k的组件有关。请注意，这是未压缩的大小。这就是缩小重要的地方，因为只有gzip可能还不够。</p>
 <p>需了解更多信息，请查看Wayne Shea和Tenni Theurer.的文章<a href="https://yuiblog.com/blog/2008/02/06/iphone-cacheability/" target="_blank" rel="external">Performance Research, Part 5: iPhone Cacheability - Making it Stick</a></p>
 <hr>
 <h4 id="将组件打包成多个文档"><a href="#将组件打包成多个文档" class="headerlink" title="将组件打包成多个文档"></a>将组件打包成多个文档</h4><p>将组件打包成多个文档就像有附件的邮件，它可以让你只用一个http请求就获得多个组件（记住：http请求代价很高）。当你使用此技术，首先检查用户代理是否支持（iPhone不支持）。</p>
 <hr>
-<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><h4 id="使用内容分发网络（cdn）"><a href="#使用内容分发网络（cdn）" class="headerlink" title="使用内容分发网络（cdn）"></a>使用内容分发网络（cdn）</h4><p>用户与你的web服务器的距离对响应时间也有影响。在多个分散于不同地理位置的服务器上部署网站内容将会<br>使你的网页从用户的角度更快地加载。但你应该从哪里开始呢？</p>
+<h3 id="7、服务器"><a href="#7、服务器" class="headerlink" title="7、服务器"></a>7、服务器</h3><h4 id="使用内容分发网络（cdn）"><a href="#使用内容分发网络（cdn）" class="headerlink" title="使用内容分发网络（cdn）"></a>使用内容分发网络（cdn）</h4><p>用户与你的web服务器的距离对响应时间也有影响。在多个分散于不同地理位置的服务器上部署网站内容将会<br>使你的网页从用户的角度更快地加载。但你应该从哪里开始呢？</p>
 <p>作为实现地理位置上分散内容的第一步，不要尝试重新设计你的web应用程序以便在分布式架构中奏效。根据各异的应用，更改架构可能包括令人生畏的任务，例如同步会话状态和跨服务器位置复制数据库事务。在应用程序架构这一步尝试缩短用户和网站内容的距离可能会导致延迟或者无法通过。</p>
 <p>请记住，80%-90%的终端用户响应时间是花在下载网页中的所有组件：图片、样式表、脚本、Flash等。这是<em>性能黄金法则</em>。比起从重新设计应用程序架构这种困难的任务开始，更好的方法是首先分散你的网站中的静态内容。这不仅大大缩短了响应时间，而且得益于内容分发网络，这更容易实现。</p>
 <p>内容分发网络（CDN）是为了更加高效的将内容发送给用户的分布在多个位置的web服务器的集合。对给特定用户发送内容的服务器的选择通常基于网络距离的度量。例如，选择网络跳数最少或者响应时间最快的服务器。</p>
@@ -329,7 +329,7 @@ img.src = &quot;&quot;;
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2017/11/22/（译）网站加速最佳实践——雅虎35条/" data-id="cjab5z6pv000cbwvpo5bt1yvz" class="article-share-link" data-share="baidu" data-title="（译）网站加速最佳实践——雅虎35条">分享到</a>
+        <a data-url="http://yoursite.com/2017/11/22/（译）网站加速最佳实践——雅虎35条/" data-id="cjab65mzi000ap0vpu3bc6xuc" class="article-share-link" data-share="baidu" data-title="（译）网站加速最佳实践——雅虎35条">分享到</a>
       
 
       
